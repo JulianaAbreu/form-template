@@ -15,8 +15,8 @@ const mapDispatchToProps = dispatch => ({
     removeStudent: (index) => {
         dispatch(removeStudent(index))
       },
-    editStudent: (id, name) => {
-        dispatch(editStudent(id, name))
+    editStudent: (name, index) => {
+        dispatch(editStudent(name, index))
     }
 })
 

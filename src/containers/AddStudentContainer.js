@@ -8,7 +8,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     addStudent: data => {
-        return dispatch(addStudent())
+        return dispatch(addStudent(data))
     },
     listStudents: () => {
         return dispatch(listStudents())

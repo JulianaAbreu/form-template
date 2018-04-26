@@ -1,4 +1,4 @@
-const API = 'https://private-785c05-learnit.apiary-mock.com';
+const API = 'http://localhost:3004';
 
 export const get = (url) => {
     return request(url, {
@@ -17,6 +17,12 @@ export const patch = (url, data) => {
     return request(url, {
         method: 'PATCH',
         body: JSON.stringify(data)
+    })
+}
+
+export const remove = (url, index) => {
+    return request(url, {
+        method: 'DELETE',
     })
 }
 

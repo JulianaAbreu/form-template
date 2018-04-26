@@ -2,35 +2,76 @@ import React, { Component } from 'react';
 import { List, Input, Icon } from 'antd';
 
 class Students extends Component {
+  constructor(props) {
+    super(props);
 
-    componentDidMount() {
-        this.props.listStudents();
-        this.props.removeStudent();
-    }
+    this.state = {
+      name: ''
+    };
+  }
+  componentDidMount() {
+    this.props.listStudents();
+  }
 
-    removeStudent = () => {
+  removeStudent = () => {};
+  //   handleChangeName = (value, data, index, event) => {
+  //     const { name } = this.state;
+  //     const { editStudent } = this.props;
 
-    }
-    handleChangeName = (event) => {
+  //     let newData = { name };
 
-    }
-    handleChangeRg = (event) => {
+  //     editStudent(newData, index);
+  //   };
 
-    }
-    render() {
-        console.log(this.props)
-        const { students, removeStudent, editStudent } = this.props;
+  handleChangeName = (student, name) => {
+    const { editStudent } = this.props;
+    student.name = name;
+    editStudent(student);
+  };
 
-        return (
-            <div>
-                <List
-                    bordered
-                    dataSource={students}
-                    renderItem={(item, index) => (<List.Item key={index}><Input  value={item.name} contentEditable onChange={(e) => editStudent(item.id, e.target.value)} /> <Icon type="delete" onClick={() => removeStudent(index)} /> </List.Item>)}
-                />
-            </div>
-        )
-    }
+  handleChangeRg = (student, rg) => {
+    const { editStudent } = this.props;
+    student.rg = rg;
+    editStudent(student)
+  };
+
+  handleChangeMatricula = (student, matricula) => {
+    const {editStudent} = this.props;
+    student.matricula = matricula;
+    editStudent(student)
+  }
+  render() {
+    const { students, removeStudent, editStudent } = this.props;
+
+    return (
+      <div>
+        <List
+          bordered
+          dataSource={students}
+          renderItem={(item, index) => (
+            <List.Item key={index}>
+              <Input
+                value={item.name}
+                onChange={name =>
+                  this.handleChangeName(item, name.target.value)}
+              />{' '}
+              <Input
+                value={item.rg}
+                onChange={rg =>
+                  this.handleChangeRg(item, rg.target.value)}
+              />{' '}
+              <Input
+                value={item.matricula}
+                onChange={matricula =>
+                  this.handleChangeMatricula(item, matricula.target.value)}
+              />{' '}
+              <Icon type="delete" onClick={() => removeStudent(item.id)} />{' '}
+            </List.Item>
+          )}
+        />
+      </div>
+    );
+  }
 }
 
-export default Students
+export default Students;
