@@ -1,0 +1,44 @@
+{
+  "students": [
+    {
+      "id": "9V4587GV3R987B",
+      "name": "Juliana",
+      "matricula": "3A",
+      "serie": "31894712",
+      "rg": "372165891"
+    },
+    {
+      "id": "9V4587GV3R987B",
+      "name": "Julia",
+      "matricula": "3A",
+      "serie": "31894713",
+      "rg": "372165892"
+    },
+    {
+      "id": "9V4587GV3R987B",
+      "name": "Julio",
+      "matricula": "3A",
+      "serie": "31894714",
+      "rg": "372165893"
+    },
+    {
+      "id": "9V4587GV3R987B",
+      "name": "fulano",
+      "matricula": "3A",
+      "serie": "31894715",
+      "rg": "372165894"
+    },
+    {
+      "id": "HHkA__b"
+    },
+    {
+      "id": "zQuPmi7"
+    },
+    {
+      "id": "sUMo2bD"
+    },
+    {
+      "id": "R4FANe_"
+    }
+  ]
+}
