@@ -41,7 +41,7 @@ class Students extends Component {
     editStudent(student)
   }
   render() {
-    const { students, removeStudent, editStudent } = this.props;
+    const { students, removeStudent } = this.props;
 
     return (
       <div>
